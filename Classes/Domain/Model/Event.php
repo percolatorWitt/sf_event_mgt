@@ -288,6 +288,11 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $speaker = null;
 
     /**
+     * @var string
+     */
+    protected $color = '';
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -1503,4 +1508,22 @@ class Event extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
         return $result;
     }
+
+    /**
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param string $color
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
+
+    
 }

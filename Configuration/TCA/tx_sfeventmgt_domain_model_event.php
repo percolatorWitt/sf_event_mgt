@@ -24,7 +24,7 @@ return [
             'fe_group' => 'fe_group',
         ],
         'requestUpdate' => 'enable_registration, enable_waitlist, enable_cancel, enable_payment, restrict_payment_methods',
-        'searchFields' => 'title,description,startdate,enddate,max_participants,price,currency,category,image,registration,location,enable_registration,enable_waitlist,speaker',
+        'searchFields' => 'title,description,startdate,enddate,max_participants,price,currency,category,image,registration,location,enable_registration,enable_waitlist,speaker,color',
         'typeicon_classes' => [
             'default' => 'ext-sfeventmgt-event'
         ],
@@ -34,7 +34,7 @@ return [
         description, program, link, top_event, startdate, enddate, fe_group, enable_registration, enable_waitlist, 
         max_participants, max_registrations_per_user, registration_deadline, price, currency, category, related, image, 
         files, additional_image, registration, location, organisator, notify_admin, notify_organisator, unique_email_check,
-        enable_payment,price_options,registration_waitlist, enable_autoconfirm, speaker, registration_fields',
+        enable_payment,price_options,registration_waitlist, enable_autoconfirm, speaker, registration_fields, color',
     ],
     'types' => [
         '1' => [
@@ -46,7 +46,7 @@ return [
                     'defaultExtras' => 'richtext:rte_transform[mode=ts_css]'
                 ],
             ],
-            'showitem' => '--palette--;;titleTopEvent, --palette--;;paletteDates, teaser, description,
+            'showitem' => '--palette--;;titleTopEvent, --palette--;;paletteDates, teaser, description, color,
 
                 --div--;LLL:EXT:sf_event_mgt/Resources/Private/Language/locallang_db.xlf:event.tabs.additional,
                     --palette--;;palettePrice, price_options, link, program,
@@ -838,6 +838,16 @@ return [
                 'rows' => 5,
                 'cols' => 30
             ]
+        ],
+        'color' => [
+            'exclude' => 1,
+            'l10n_mode' => 'prefixLangTitle',
+            'label' => 'LLL:EXT:sf_event_mgt/Resources/Private/Language/locallang_db.xlf:tx_sfeventmgt_domain_model_event.color',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
         ],
     ],
 ];
