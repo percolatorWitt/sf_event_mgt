@@ -1,0 +1,61 @@
+/*----------------------------------------------------------------------
+This stylesheet is for the extension sf_event_mgt
+----------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------
+Calendar view
+----------------------------------------------------------------------*/
+.event-calendar ul{
+    margin: 0 !important;
+}
+
+.event-calendar__weekdays-weekday {
+    background: #292929;
+}
+
+.event-calendar__weeknumber {
+    background: #292929;
+}
+
+.event-calendar__day div {
+    color: #FFF;
+}
+
+.event-calendar__day {
+    border: 1px solid #686868;
+}
+
+.event-calendar__day-other-month {
+    background: #9f9f9f;
+}
+
+.event-calendar__day-today {
+    background: #d65564;
+}
+
+.event-calendar__day-event {
+    background: #464646;
+    border: 1px solid #292929;
+}
+
+.event-calendar__day-event-time {
+    font-size: 14px !important;
+}
+
+
+
+
+/*----------------------------------------------------------------------
+detail view
+----------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------
+registration view
+----------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------
+list view
+----------------------------------------------------------------------*/

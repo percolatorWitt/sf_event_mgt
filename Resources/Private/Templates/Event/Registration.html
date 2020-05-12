@@ -8,24 +8,45 @@
         <f:then>
             <e:title pageTitle="{event.title}" />
 
-            <h1><f:translate key="registration.title" /></h1>
+            <f:comment>
+            <f:if condition="{settings.detailPid}">
+                <div style="float:left;">
+                    <f:link.action action="detail" pageUid="{settings.detailPid}" arguments="{event: event}"><f:translate key="event.backDetailsText" /></f:link.action>
+                </div>
+            </f:if>
 
-            <div class="event-registration-row">
+            <div style="float:right;">
+                <f:link.action action="list" pageUid="{settings.listPid}"><f:translate key="event.backtext" /></f:link.action>
+            </div>
+            </f:comment>
+
+            <div style="margin-bottom: 20px;">
+                <f:link.action action="calendar" pageUid="{settings.calendarPid}">
+                    Zurück zur Kalenderansicht
+                </f:link.action>
+            </div>
+
+            <f:comment><h1><f:translate key="registration.title" /></h1></f:comment>
+
+            <f:comment>
+            <div class="event-registration-row" style="clear: both;margin-top:20px;">
                 <div class="event-registration-label">
                     <f:translate key="tx_sfeventmgt_domain_model_event.title" />
                 </div>
                 <div class="event-registration-value event-title">
-                    {event.title}
+                    <h2>{event.title}</h2>
                 </div>
                 <div class="clear"></div>
             </div>
+            </f:comment>
 
-            <div class="event-registration-row">
+            <div class="clear"></div>
+            <div class="event-registration-row" style="float:left;width: 50%;">
                 <div class="event-list-label">
                     <f:translate key="tx_sfeventmgt_domain_model_event.startdate"/>
                 </div>
                 <div class="event-list-value event-startdate">
-                    <f:format.date format="%d.%m.%Y - %H:%M">{event.startdate}</f:format.date>
+                    <h2><f:format.date format="%d.%m.%Y - %H:%M">{event.startdate}</f:format.date></h2>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -34,16 +55,16 @@
                     <f:translate key="tx_sfeventmgt_domain_model_event.enddate"/>
                 </div>
                 <div class="event-list-value event-enddate">
-                    <f:format.date format="%d.%m.%Y - %H:%M">{event.enddate}</f:format.date>
+                    <h2><f:format.date format="%d.%m.%Y - %H:%M">{event.enddate}</f:format.date></h2>
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="event-registration-row">
+            <div class="event-registration-row" style="float:left;width: 50%;">
                 <div class="event-list-label">
                     <f:translate key="tx_sfeventmgt_domain_model_event.maxParticipants"/>
                 </div>
                 <div class="event-list-value event-maxparticipants">
-                    {event.maxParticipants}
+                    <h2>{event.maxParticipants}</h2>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -52,7 +73,7 @@
                     <f:translate key="tx_sfeventmgt_domain_model_event.registrations"/>
                 </div>
                 <div class="event-list-value event-registrations">
-                    {event.registration->f:count()}
+                    <h2>{event.registration->f:count()}</h2>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -91,19 +112,6 @@
 
             <f:form object="{registration}" name="registration" action="saveRegistration" arguments="{event: event}" class="registration" enctype="multipart/form-data">
                 <fieldset>
-                    <div class="event-registration-row {e:validation.errorClass(fieldname: 'gender')}">
-                        <label for="gender">
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.gender" />
-                            <e:registration.isRequiredField settings="{settings}" fieldname="gender">
-                                <span class="event-required">*</span>
-                            </e:registration.isRequiredField>
-                        </label>
-
-                        <f:form.radio name="gender" property="gender" value=""/> <f:translate key="tx_sfeventmgt_domain_model_registration.gender.notset" />
-                        <f:form.radio name="gender" property="gender" value="f" checked="{f:if(condition: '{e:prefill(fieldname: \'gender\', prefillSettings: \'{settings.registration.prefillFields}\')} == 1', then: 'checked')}"/> <f:translate key="tx_sfeventmgt_domain_model_registration.gender.female" />
-                        <f:form.radio name="gender" property="gender" value="m" checked="{f:if(condition: '{e:prefill(fieldname: \'gender\', prefillSettings: \'{settings.registration.prefillFields}\')} == 0', then: 'checked')}" /> <f:translate key="tx_sfeventmgt_domain_model_registration.gender.male" />
-                    </div>
-
                     <div class="event-registration-row {e:validation.errorClass(fieldname: 'firstname')}">
                         <label for="firstname">
                             <f:translate key="tx_sfeventmgt_domain_model_registration.firstname" />
@@ -126,72 +134,6 @@
                         <f:render partial="FormErrors" arguments="{field: 'registration.lastname'}"/>
                     </div>
 
-                    <div class="event-registration-row {e:validation.errorClass(fieldname: 'title')}">
-                        <label for="title">
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.title" />
-                            <e:registration.isRequiredField settings="{settings}" fieldname="title">
-                                <span class="event-required">*</span>
-                            </e:registration.isRequiredField>
-                        </label>
-                        <f:form.textfield id="title" property="title" value="{e:prefill(fieldname: 'title', prefillSettings: '{settings.registration.prefillFields}')}"/><br>
-                        <f:render partial="FormErrors" arguments="{field: 'registration.title'}"/>
-                    </div>
-
-                    <div class="event-registration-row {e:validation.errorClass(fieldname: 'company')}">
-                        <label for="company">
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.company" />
-                            <e:registration.isRequiredField settings="{settings}" fieldname="company">
-                                <span class="event-required">*</span>
-                            </e:registration.isRequiredField>
-                        </label>
-                        <f:form.textfield id="company" property="company" value="{e:prefill(fieldname: 'company', prefillSettings: '{settings.registration.prefillFields}')}"/><br>
-                        <f:render partial="FormErrors" arguments="{field: 'registration.company'}"/>
-                    </div>
-
-                    <div class="event-registration-row {e:validation.errorClass(fieldname: 'address')}">
-                        <label for="address">
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.address" />
-                            <e:registration.isRequiredField settings="{settings}" fieldname="address">
-                                <span class="event-required">*</span>
-                            </e:registration.isRequiredField>
-                        </label>
-                        <f:form.textfield id="address" property="address" value="{e:prefill(fieldname: 'address', prefillSettings: '{settings.registration.prefillFields}')}"/><br>
-                        <f:render partial="FormErrors" arguments="{field: 'registration.address'}"/>
-                    </div>
-
-                    <div class="event-registration-row {e:validation.errorClass(fieldname: 'zip')}">
-                        <label for="zip">
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.zip" />
-                            <e:registration.isRequiredField settings="{settings}" fieldname="zip">
-                                <span class="event-required">*</span>
-                            </e:registration.isRequiredField>
-                        </label>
-                        <f:form.textfield id="zip" property="zip" value="{e:prefill(fieldname: 'zip', prefillSettings: '{settings.registration.prefillFields}')}"/><br>
-                        <f:render partial="FormErrors" arguments="{field: 'registration.zip'}"/>
-                    </div>
-
-                    <div class="event-registration-row {e:validation.errorClass(fieldname: 'city')}">
-                        <label for="city">
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.city" />
-                            <e:registration.isRequiredField settings="{settings}" fieldname="city">
-                                <span class="event-required">*</span>
-                            </e:registration.isRequiredField>
-                        </label>
-                        <f:form.textfield id="city" property="city" value="{e:prefill(fieldname: 'city', prefillSettings: '{settings.registration.prefillFields}')}"/><br>
-                        <f:render partial="FormErrors" arguments="{field: 'registration.city'}"/>
-                    </div>
-
-                    <div class="event-registration-row {e:validation.errorClass(fieldname: 'country')}">
-                        <label for="country">
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.country" />
-                            <e:registration.isRequiredField settings="{settings}" fieldname="country">
-                                <span class="event-required">*</span>
-                            </e:registration.isRequiredField>
-                        </label>
-                        <f:form.textfield id="country" property="country" value="{e:prefill(fieldname: 'country', prefillSettings: '{settings.registration.prefillFields}')}"/><br>
-                        <f:render partial="FormErrors" arguments="{field: 'registration.country'}"/>
-                    </div>
-
                     <div class="event-registration-row {e:validation.errorClass(fieldname: 'email')}">
                         <label for="email">
                             <f:translate key="tx_sfeventmgt_domain_model_registration.email" />
@@ -205,24 +147,13 @@
 
                     <div class="event-registration-row {e:validation.errorClass(fieldname: 'phone')}">
                         <label for="phone">
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.phone" />
+                            <f:translate key="tx_sfeventmgt_domain_model_registration.libraryCard" />
                             <e:registration.isRequiredField settings="{settings}" fieldname="phone">
                                 <span class="event-required">*</span>
                             </e:registration.isRequiredField>
                         </label>
                         <f:form.textfield id="phone" property="phone" value="{e:prefill(fieldname: 'phone', prefillSettings: '{settings.registration.prefillFields}')}"/><br>
                         <f:render partial="FormErrors" arguments="{field: 'registration.phone'}"/>
-                    </div>
-
-                    <div class="event-registration-row {e:validation.errorClass(fieldname: 'date_of_birth')}">
-                        <label for="dateOfBirth">
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.date_of_birth" />
-                            <e:registration.isRequiredField settings="{settings}" fieldname="date_of_birth">
-                                <span class="event-required">*</span>
-                            </e:registration.isRequiredField>
-                        </label>
-                        <f:form.textfield id="dateOfBirth" property="dateOfBirth" /><br>
-                        <f:render partial="FormErrors" arguments="{field: 'registration.dateOfBirth'}"/>
                     </div>
 
                     <f:if condition="{event.maxRegistrationsPerUser} > 1">
@@ -241,16 +172,6 @@
                     </f:if>
 
                     <br/>
-                    <div class="event-registration-row {e:validation.errorClass(fieldname: 'notes')}">
-                        <label for="notes">
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.notes" />
-                            <e:registration.isRequiredField settings="{settings}" fieldname="notes">
-                                <span class="event-required">*</span>
-                            </e:registration.isRequiredField>
-                        </label>
-                        <f:form.textarea id="notes" property="notes"/><br>
-                        <f:render partial="FormErrors" arguments="{field: 'registration.notes'}"/>
-                    </div>
 
                     <f:if condition="{event.registrationFields}">
                         <f:for each="{event.registrationFields}" as="field">
@@ -261,12 +182,14 @@
                     <div class="event-registration-row checkbox {e:validation.errorClass(fieldname: 'accepttc')}">
                         <label for="accepttc">
                             <f:form.checkbox id="accepttc" property="accepttc" value="1"/>
-                            <f:translate key="tx_sfeventmgt_domain_model_registration.accepttc"/>
+                            Lesesaal-Medien
+                            <f:comment><f:translate key="tx_sfeventmgt_domain_model_registration.accepttc"/></f:comment>
                             <e:registration.isRequiredField settings="{settings}" fieldname="accepttc">
                                 <span class="event-required">*</span>
                             </e:registration.isRequiredField>
                         </label>
                     </div>
+
                     <f:render partial="FormErrors" arguments="{field: 'registration.accepttc'}"/>
                     <f:if condition="{settings.reCaptcha.siteKey}">
                         <div class="event-registration-row recaptcha {e:validation.errorClass(fieldname: 'recaptcha')}">
@@ -279,12 +202,6 @@
                     <f:form.submit value="{f:translate(key:'event.submit-registration')}" class="submit"/>
                 </fieldset>
             </f:form>
-
-            <f:if condition="{settings.detailPid}">
-                <f:link.action action="detail" pageUid="{settings.detailPid}" arguments="{event: event}"><f:translate key="event.backDetailsText" /></f:link.action>
-            </f:if>
-
-            <f:link.action action="list" pageUid="{settings.listPid}"><f:translate key="event.backtext" /></f:link.action>
 
         </f:then>
         <f:else>

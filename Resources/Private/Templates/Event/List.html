@@ -4,8 +4,9 @@
 
 <f:section name="main">
 
-<h1><f:translate key="list.title" /></h1>
+	<f:comment><h1><f:translate key="list.title" /></h1></f:comment>
 
+	<f:comment>
     <!-- The code below shows how you can filter events by categories. You can e.g. create an UL which acts like a select-box -->
     <f:link.action action="list" controller="Event"><f:translate key="event.allEvents"/></f:link.action>
     <f:for each="{categories}" as="category">
@@ -18,6 +19,7 @@
 			</f:else>
 		</f:if>
     </f:for>
+	</f:comment>
 
     <!-- Output all events -->
     <f:for each="{events}" as="event">

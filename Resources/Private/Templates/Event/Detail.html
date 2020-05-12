@@ -9,14 +9,14 @@
 	<f:if condition="{event}">
 		<e:title pageTitle="{event.title}" />
 
-		<h1><f:translate key="detail.title" /></h1>
+		<f:comment><h1><f:translate key="detail.title" /></h1></f:comment>
 
 		<div class="event-detail-row">
 			<div class="event-detail-label">
 				<f:translate key="tx_sfeventmgt_domain_model_event.title" />
 			</div>
 			<div class="event-detail-value event-title">
-				{event.title}
+				<h2>{event.title}</h2>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -26,7 +26,7 @@
 				<f:translate key="tx_sfeventmgt_domain_model_event.teaser" />
 			</div>
 			<div class="event-detail-value event-teaser">
-				{event.teaser}
+				<h2>{event.teaser}</h2>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -53,26 +53,66 @@
 			</div>
 		</f:if>
 
-		<div class="event-detail-row">
+		<div class="event-detail-row" style="float:left; width:50%;">
 			<div class="event-detail-label">
 				<f:translate key="tx_sfeventmgt_domain_model_event.startdate" />
 			</div>
 			<div class="event-detail-value event-startdate">
-				<f:format.date format="%d.%m.%Y - %H:%M">{event.startdate}</f:format.date>
+				<h2><f:format.date format="%d.%m.%Y - %H:%M">{event.startdate}</f:format.date></h2>
+			</div>
+			<div class="clear"></div>
+		</div>
+
+		<div class="event-detail-row" style="float:left; width:50%;">
+			<div class="event-detail-label">
+				<f:translate key="tx_sfeventmgt_domain_model_event.enddate" />
+			</div>
+			<div class="event-detail-value event-enddate">
+				<h2><f:format.date format="%d.%m.%Y - %H:%M">{event.enddate}</f:format.date></h2>
 			</div>
 			<div class="clear"></div>
 		</div>
 
 		<div class="event-detail-row">
 			<div class="event-detail-label">
-				<f:translate key="tx_sfeventmgt_domain_model_event.enddate" />
+				<f:translate key="tx_sfeventmgt_domain_model_event.location" />
 			</div>
-			<div class="event-detail-value event-enddate">
-				<f:format.date format="%d.%m.%Y - %H:%M">{event.enddate}</f:format.date>
+			<div class="event-detail-value event-location-title">
+				<f:if condition="{event.location.title}">
+					<f:then>
+						{event.location.title} <br/>
+					</f:then>
+				</f:if>
+
+				<f:if condition="{event.location.address}">
+					<f:then>
+						{event.location.address} <br/>
+					</f:then>
+				</f:if>
+
+				<f:if condition="{event.location.zip}">
+					<f:then>
+						{event.location.zip} <br/>
+					</f:then>
+				</f:if>
+
+				<f:if condition="{event.location.city}">
+					<f:then>
+						{event.location.city} <br/>
+					</f:then>
+				</f:if>
+
+				<f:if condition="{event.location.country}">
+					<f:then>
+						{event.location.country} <br/>
+					</f:then>
+				</f:if>
+
 			</div>
 			<div class="clear"></div>
 		</div>
 
+		<f:comment>
 		<div class="event-detail-row">
 			<div class="event-detail-label">
 				<f:translate key="tx_sfeventmgt_domain_model_event.location" /> <f:translate key="tx_sfeventmgt_domain_model_event.location.title" />
@@ -135,36 +175,39 @@
 			<div class="clear"></div>
 		</div>
 
-		<div class="event-detail-row">
+		</f:comment>
+
+		<div class="event-detail-row" style="float:left; width:33%;">
 			<div class="event-detail-label">
 				<f:translate key="tx_sfeventmgt_domain_model_event.maxParticipants" />
 			</div>
 			<div class="event-detail-value event-maxParticipants">
-				{event.maxParticipants}
+				<h2>{event.maxParticipants}</h2>
 			</div>
 			<div class="clear"></div>
 		</div>
 
-		<div class="event-detail-row">
+		<div class="event-detail-row" style="float:left; width:33%;">
 			<div class="event-detail-label">
 				<f:translate key="tx_sfeventmgt_domain_model_event.registrations" />
 			</div>
 			<div class="event-detail-value event-registrations">
-				{event.registration->f:count()}
+				<h2>{event.registration->f:count()}</h2>
 			</div>
 			<div class="clear"></div>
 		</div>
 
-		<div class="event-detail-row">
+		<div class="event-detail-row" style="float:left; width:33%;">
 			<div class="event-detail-label">
 				<f:translate key="tx_sfeventmgt_domain_model_event.freePlaces" />
 			</div>
 			<div class="event-detail-value event-freePlaces">
-				{event.freePlaces}
+				<h2>{event.freePlaces}</h2>
 			</div>
 			<div class="clear"></div>
 		</div>
 
+		<f:comment>
 		<div class="event-detail-row">
 			<div class="event-detail-label">
 				<f:translate key="tx_sfeventmgt_domain_model_event.price" />
@@ -181,6 +224,7 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+
 
 		<div class="event-detail-row">
 			<div class="event-detail-label">
@@ -201,6 +245,7 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+		</f:comment>
 
 		<f:if condition="{event.image}">
 			<div class="event-detail-row">
@@ -289,8 +334,9 @@
 		</f:if>
 
 		<f:link.action action="icalDownload" arguments="{event : event}"><f:translate key="event.icalDownload" /></f:link.action>
-
+		<br/>
 		<f:link.action action="list" pageUid="{settings.listPid}"><f:translate key="event.backtext" /></f:link.action>
+		<br/>
 		<f:if condition="{event.registrationPossible}">
 			<f:if condition="{settings.registrationPid} !=''">
 				<f:link.action action="registration" arguments="{event : event}" pageUid="{settings.registrationPid}">

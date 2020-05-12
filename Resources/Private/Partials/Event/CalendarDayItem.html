@@ -4,26 +4,72 @@
             <div class="event-calendar__day-date">{day.day}</div>
 
             <f:for each="{day.events}" as="event">
-                <div class="event-calendar__day-event">
+                <f:if condition="{event.maxParticipants} > 0 && {event.freePlaces} > 0">
+                    <f:then>
+                        <div class="event-calendar__day-event">
+                    </f:then>
+                    <f:else>
+                        <div class="event-calendar__day-event" style="background: #9f9f9f;">
+                    </f:else>
+                </f:if>
 
-                    <f:link.action action="detail" arguments="{event : event}" pageUid="{settings.detailPid}">{event.title}</f:link.action>
+                <div class="event-calendar__day-event-time">
+                    <f:if condition="{day.timestamp -> f:format.date(format: 'd.m.Y')} == {event.startdate -> f:format.date(format: 'd.m.Y')}">
+                        <f:then>
+                            <f:format.date format="H:i">{event.startdate}</f:format.date>
+                        </f:then>
+                    </f:if>
+                    <f:if condition="{event.enddate}">
+                        <f:then>
+                            <f:if condition="{event.startdate -> f:format.date(format: 'd.m.Y')} == {event.enddate -> f:format.date(format: 'd.m.Y')}">
+                                <f:then>
+                                    - <f:format.date format="H:i">{event.enddate}</f:format.date>
+                                </f:then>
+                            </f:if>
+                        </f:then>
+                    </f:if>
+                </div>
 
-                    <div class="event-calendar__day-event-time">
-                        <f:if condition="{day.timestamp -> f:format.date(format: 'd.m.Y')} == {event.startdate -> f:format.date(format: 'd.m.Y')}">
+                <f:comment>
+                <f:link.action action="detail" arguments="{event : event}" pageUid="{settings.detailPid}">
+                    <f:comment>{event.title}</f:comment>
+                    <f:if condition="{event.maxParticipants} > 0 && {event.freePlaces} == 0">
+                        <f:then>
+                            Ausgebucht
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{event.maxParticipants} != 0">
+                                <f:then>
+                                    <br/>{event.registration->f:count()} / {event.maxParticipants}
+                                </f:then>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                </f:link.action>
+                </f:comment>
+
+                <f:if condition="{event.maxParticipants} > 0 && {event.freePlaces} == 0">
+                    <f:then>
+                        Ausgebucht
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{event.maxParticipants} != 0">
                             <f:then>
-                                <f:format.date format="H:i">{event.startdate}</f:format.date>
+                                <div>
+                                    {event.registration->f:count()} / {event.maxParticipants}
+                                </div>
                             </f:then>
                         </f:if>
-                        <f:if condition="{event.enddate}">
-                            <f:then>
-                                <f:if condition="{event.startdate -> f:format.date(format: 'd.m.Y')} == {event.enddate -> f:format.date(format: 'd.m.Y')}">
-                                    <f:then>
-                                        - <f:format.date format="H:i">{event.enddate}</f:format.date>
-                                    </f:then>
-                                </f:if>
-                            </f:then>
-                        </f:if>
-                    </div>
+                    </f:else>
+                </f:if>
+
+                <f:if condition="{event.registrationPossible}">
+                    <f:if condition="{settings.registrationPid} !=''">
+                        <f:link.action action="registration" arguments="{event : event}" pageUid="{settings.registrationPid}">
+                            <f:translate key="event.registration"/>
+                        </f:link.action>
+                    </f:if>
+                </f:if>
                 </div>
             </f:for>
         </f:then>
