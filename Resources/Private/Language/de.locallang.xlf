@@ -1,91 +1,119 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-05-17T12:48:01Z" product-name="sf_event_mgt">
+	<file source-language="de" datatype="plaintext" original="messages" date="2014-05-17T12:48:01Z" product-name="sf_event_mgt">
 		<header/>
 		<body>
 			<trans-unit id="tx_sfeventmgt_domain_model_event">
 				<source>Event</source>
+				<target>Event</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.title">
 				<source>Title</source>
+				<target>Titel</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.color">
 				<source>Color</source>
+				<target>Farbe</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.teaser">
 				<source>Teaser</source>
+				<target>Ankündigung</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.description">
 				<source>Description</source>
+				<target>Beschreibung</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.program">
 				<source>Program/Schedule</source>
+				<target>Programm</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.link">
 				<source>Link</source>
+				<target>Link</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.top_event">
 				<source>Top event</source>
+				<target>Top event</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.startdate">
 				<source>Start date</source>
+				<target>Startdatum</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.enddate">
 				<source>End date</source>
+				<target>Enddatum</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.maxParticipants">
 				<source>Max. participants</source>
+				<target>Max. Teilnehmer</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.enable_registration">
 				<source>Registration enabled</source>
+				<target>Registrierung aktiv</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.registrations">
 				<source>Registrations</source>
+				<target>Registrierungen</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.freePlaces">
 				<source>Free places</source>
+				<target>Freie Plätze</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.price">
 				<source>Price</source>
+				<target>Preis</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.currency">
 				<source>Currency</source>
+				<target>Kosten</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.category">
 				<source>Category</source>
+				<target>Kategorie</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.related">
 				<source>Related events</source>
+				<target>Zugehörige Events</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.speaker">
 				<source>Speaker</source>
+				<target>Sprecher</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.location">
 				<source>Location</source>
+				<target>Lokation</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.location.title">
 				<source>Title</source>
+				<target>Titel</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.location.address">
 				<source>Address</source>
+				<target>Adresse</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.location.zip">
 				<source>Zip</source>
+				<target>PLZ</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.location.city">
 				<source>City</source>
+				<target>Stadt</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.location.country">
 				<source>Country</source>
+				<target>Land</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.location.description">
 				<source>Description</source>
+				<target>Beschreibung</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.image">
 				<source>Images</source>
+				<target>Bilder</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.files">
 				<source>Files</source>
+				<target>Dateien</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.additional_image">
 				<source>Additional Images</source>
@@ -95,12 +123,15 @@
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration">
 				<source>Registration</source>
+				<target>Registrierung</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.firstname">
 				<source>Firstname</source>
+				<target>Vorname</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.lastname">
 				<source>Lastname</source>
+				<target>Nachname</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.title">
 				<source>Title</source>
@@ -158,30 +189,37 @@
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.amountOfRegistrations">
 				<source>Amount of registrations</source>
+				<target>Anzahl der Registrierungen</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.libraryCard">
 				<source>Library card</source>
+				<target>Bibliotheksausweis</target>
 			</trans-unit>
 			<trans-unit id="event.registration">
 				<source>Registration</source>
+				<target>Check-in</target>
 			</trans-unit>
 			<trans-unit id="registration.form.header">
 				<source>Registration form</source>
+				<target>Registrierungsformular</target>
 			</trans-unit>
 			<trans-unit id="registration.form.waitlist">
 				<source>Please note, that the event is fully booked and you are registering to the waitlist</source>
 			</trans-unit>
 			<trans-unit id="event.backtext">
 				<source>Back to listview</source>
+				<target>Zurück zur Listenansicht</target>
 			</trans-unit>
 			<trans-unit id="event.backDetailsText">
 				<source>Back to event details</source>
+				<target>Zurück zur Detailseite</target>
 			</trans-unit>
 			<trans-unit id="event.allEvents">
 				<source>All events</source>
 			</trans-unit>
 			<trans-unit id="event.submit-registration">
 				<source>Send registration</source>
+				<target>Registrierung abschicken</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationfailedeventexpired">
 				<source>Registration is not possible any more, because the event startdate is reached.</source>
@@ -209,6 +247,7 @@
 			</trans-unit>
 			<trans-unit id="event.message.registrationsuccessful">
 				<source>Your registration was successful.</source>
+				<target>Die Registrierung war erfolgreich</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationsuccessfulwrongeventhmac">
 				<source>Your registration was successful, but the given event or HMAC is wrong!</source>
@@ -314,6 +353,7 @@
 			</trans-unit>
 			<trans-unit id="registrationResult.title.successful">
 				<source>Registration successful</source>
+				<target>Registrierung erfolgreich abgeschlossen</target>
 			</trans-unit>
 			<trans-unit id="registrationWaitlistResult.title.successful">
 				<source>Registration on the waitlist successful</source>
