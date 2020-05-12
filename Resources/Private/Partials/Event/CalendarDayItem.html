@@ -4,9 +4,16 @@
             <div class="event-calendar__day-date">{day.day}</div>
 
             <f:for each="{day.events}" as="event">
-                <f:if condition="{event.maxParticipants} > 0 && {event.freePlaces} > 0">
+                <f:if condition="{event.maxParticipants} > 0">
                     <f:then>
-                        <div class="event-calendar__day-event">
+                        <f:if condition="{event.freePlaces} > 0">
+                            <f:then>
+                                <div class="event-calendar__day-event">
+                            </f:then>
+                            <f:else>
+                                <div class="event-calendar__day-event" style="background: #9f9f9f;">
+                            </f:else>
+                        </f:if>
                     </f:then>
                     <f:else>
                         <div class="event-calendar__day-event" style="background: #9f9f9f;">
@@ -33,9 +40,20 @@
                 <f:comment>
                 <f:link.action action="detail" arguments="{event : event}" pageUid="{settings.detailPid}">
                     <f:comment>{event.title}</f:comment>
-                    <f:if condition="{event.maxParticipants} > 0 && {event.freePlaces} == 0">
+                    <f:if condition="{event.maxParticipants} > 0">
                         <f:then>
-                            Ausgebucht
+                            <f:if condition="{event.freePlaces} == 0">
+                                <f:then>
+                                    Ausgebucht
+                                </f:then>
+                                <f:else>
+                                    <f:if condition="{event.maxParticipants} != 0">
+                                        <f:then>
+                                            <br/>{event.registration->f:count()} / {event.maxParticipants}
+                                        </f:then>
+                                    </f:if>
+                                </f:else>
+                            </f:if>
                         </f:then>
                         <f:else>
                             <f:if condition="{event.maxParticipants} != 0">
@@ -48,9 +66,23 @@
                 </f:link.action>
                 </f:comment>
 
-                <f:if condition="{event.maxParticipants} > 0 && {event.freePlaces} == 0">
+                <f:if condition="{event.maxParticipants} > 0">
                     <f:then>
-                        Ausgebucht
+                        <f:if condition="{event.freePlaces} == 0">
+                            <f:then>
+                                Ausgebucht
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{event.maxParticipants} != 0">
+                                    <f:then>
+                                        <div>
+                                            {event.registration->f:count()} / {event.maxParticipants}
+                                        </div>
+                                    </f:then>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+
                     </f:then>
                     <f:else>
                         <f:if condition="{event.maxParticipants} != 0">
