@@ -1,23 +1,17 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<p>New registration for event: {event.title} </p>
+<p>Neue Registrierung für das Event ({f:format.date(date: event.startdate, format: '%d.%m.%Y - %H:%M')}  - {f:format.date(date: event.enddate, format: '%d.%m.%Y - %H:%M')}) </p>
 
 <ul>
-    <li>{registration.gender}</li>
     <li>{registration.firstname}</li>
     <li>{registration.lastname}</li>
-    <li>{registration.address}</li>
-    <li>{registration.zip}</li>
-    <li>{registration.city}</li>
-    <li>{registration.country}</li>
     <li>{registration.email}</li>
     <li>{registration.phone}</li>
-    <li>{f:format.date(date: registration.dateOfBirth, format: '%d.%m.%Y')}</li>
-    <li>{registration.notes}</li>
+    <li>{registration.accepttc}</li>
 </ul>
 
 <f:render partial="Notification/RegistrationFields" arguments="{registration: registration}"/>
 
-<p>The registration is not finished yet, as the user needs to confirm his/her registration</p>
+<p>Die Registrierung ist noch nicht abgeschlossen, solange der Nutzer die Registrierung nicht bestätigt hat.</p>
 
 </html>

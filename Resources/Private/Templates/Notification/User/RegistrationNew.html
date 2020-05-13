@@ -1,22 +1,22 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<p>Hello {registration.firstname} {registration.lastname},</p>
-<p>we have received your registration for the following event:</p>
+<p>Hallo {registration.firstname} {registration.lastname},</p>
+<p>wir haben Ihre Registrierung zum folgenden Event erhalten:</p>
 <ul>
-    <li>{event.title} - ({f:format.date(date: event.startdate, format: '%d.%m.%Y - %H:%M')}  - {f:format.date(date: event.enddate, format: '%d.%m.%Y - %H:%M')})</li>
+    <li>({f:format.date(date: event.startdate, format: '%d.%m.%Y - %H:%M')}  - {f:format.date(date: event.enddate, format: '%d.%m.%Y - %H:%M')})</li>
 </ul>
-<p>Please confirm your registration by opening the following confirmation link:</p>
+<p>Bitte bestätigen Sie Ihre Registrierung durch das Aufrufen des folgenden Links:</p>
 <p>
     <f:uri.action action="confirmRegistration" arguments="{reguid: '{registration.uid}', hmac: '{hmac}'}" absolute="TRUE" controller="Event" extensionName="sfeventmgt" pluginName="Pievent" />
 </p>
 <f:if condition="{event.enableCancel}">
-    <p>If you wish to cancel your registration, please open the following link:</p>
+    <p>Falls Sie Ihre Registrierung stornieren möchten, können Sie folgenden Link aufrufen:</p>
     <p>
         <f:uri.action action="cancelRegistration" arguments="{reguid: '{registration.uid}', hmac: '{hmac}'}" absolute="TRUE" controller="Event" extensionName="sfeventmgt" pluginName="Pievent" />
     </p>
 </f:if>
-<p>Note, that your registration will be cancelled, if you do not open the confirmation link until {f:format.date(date: registration.confirmationUntil, format: '%d.%m.%Y - %H:%M:%S')}</p>
-<p>Best regards,</p>
+<p>Ihre Registrierung wird automatisch storniert, wenn Sie die Registrierung nicht bis {f:format.date(date: registration.confirmationUntil, format: '%d.%m.%Y - %H:%M:%S')} bestätigt haben.</p>
+<p>Mit freundlichen Grüßen,</p>
 <p><f:format.html>{settings.notification.senderSignature}</f:format.html></p>
 
 </html>
