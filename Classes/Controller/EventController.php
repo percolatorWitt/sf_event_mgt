@@ -692,6 +692,10 @@ class EventController extends AbstractController
                 $messageKey = 'event.message.registrationfailedemailnotunique';
                 $titleKey = 'registrationResult.title.failed';
                 break;
+            case RegistrationResult::REGISTRATION_FAILED_BIBID:
+                $messageKey = 'event.message.registrationfailedbibidincorrect';
+                $titleKey = 'registrationResult.title.failed';
+                break;
             default:
                 $messageKey = '';
                 $titleKey = '';

@@ -355,13 +355,53 @@ class RegistrationService
         ) {
             $success = false;
             $result = RegistrationResult::REGISTRATION_FAILED_EMAIL_NOT_UNIQUE;
-        } elseif ($event->getRegistration()->count() >= $event->getMaxParticipants()
+        } elseif (!$this->checkLibraryCardId($registration->getPhone())) {
+            $success = false;
+            $result = RegistrationResult::REGISTRATION_FAILED_BIBID;
+        }
+        elseif ($event->getRegistration()->count() >= $event->getMaxParticipants()
             && $event->getMaxParticipants() > 0 && $event->getEnableWaitlist()
         ) {
             $result = RegistrationResult::REGISTRATION_SUCCESSFUL_WAITLIST;
         }
 
         return $success;
+    }
+
+    /**
+     * @param $id
+     * @return boolean
+     */
+    public function checkLibraryCardId($id) {
+
+        if ((strlen($id) == 11) && ((substr($id,0,4)=="0018")) || (substr($id,0,4)=="0022")) {
+
+            $e = substr($id,1,10);
+            $m = 11;
+            $s = 0;
+            $i = 1;
+            $e = StrToLower($e);
+
+            while ($i < 10) {
+                $s = $s + ($m - $i) * substr($e,$i-1,1);
+                $i = $i + 1;
+            }
+
+            $s = $s % 11;
+            $s = ($m - $s) % 11;
+
+            if ($s == 10) {
+                $s = "x";
+            }
+
+            if ($s == substr($e, 9, 1)) {
+                return 1;
+            } else {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
     }
 
     /**
