@@ -1,11 +1,11 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<p style="color:{event.color}">Neue Registrierung für das Event ({f:format.date(date: event.startdate, format: '%d.%m.%Y - %H:%M')}  - {f:format.date(date: event.enddate, format: '%d.%m.%Y - %H:%M')}) </p>
+<p>Neue Registrierung für das Event ({f:format.date(date: event.startdate, format: '%d.%m.%Y - %H:%M')}  - {f:format.date(date: event.enddate, format: '%d.%m.%Y - %H:%M')}) </p>
 <p>
-    <div style="width:10px;height:10px;color:{event.color}"></div>
-    Ihre Zonenfarbe ist <f:if condition="{event.color}=='yellow"><f:then>gelb</f:then></f:if>
-    <f:if condition="{event.color}=='blue"><f:then>blau</f:then></f:if>
-    <f:if condition="{event.color}=='green"><f:then>grün</f:then></f:if>
+    <div style="width:10px;height:10px;background-color:{event.color}"></div>
+    Ihre Zonenfarbe ist <f:if condition="{event.color}=='yellow'"><f:then>gelb</f:then></f:if>
+    <f:if condition="{event.color}=='blue'"><f:then>blau</f:then></f:if>
+    <f:if condition="{event.color}=='green'"><f:then>grün</f:then></f:if>
 </p>
 <ul>
     <li>{registration.firstname}</li>

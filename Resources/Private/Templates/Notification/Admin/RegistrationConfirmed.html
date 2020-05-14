@@ -4,10 +4,10 @@
 
 <p>({f:format.date(date: event.startdate, format: '%d.%m.%Y - %H:%M')}  - {f:format.date(date: event.enddate, format: '%d.%m.%Y - %H:%M')})</p>
 <p>
-    <div style="width:10px;height:10px;color:{event.color}"></div>
-    Ihre Zonenfarbe ist <f:if condition="{event.color}=='yellow"><f:then>gelb</f:then></f:if>
-    <f:if condition="{event.color}=='blue"><f:then>blau</f:then></f:if>
-    <f:if condition="{event.color}=='green"><f:then>grün</f:then></f:if>
+    <div style="width:10px;height:10px;background-color:{event.color}"></div>
+    Ihre Zonenfarbe ist <f:if condition="{event.color}=='yellow'"><f:then>gelb</f:then></f:if>
+    <f:if condition="{event.color}=='blue'"><f:then>blau</f:then></f:if>
+    <f:if condition="{event.color}=='green'"><f:then>grün</f:then></f:if>
 </p>
 <p>Registrierungsdaten:</p>
 
