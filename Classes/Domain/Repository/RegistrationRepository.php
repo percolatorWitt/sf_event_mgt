@@ -206,4 +206,23 @@ class RegistrationRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             $query->setOrderings($orderings);
         }
     }
+
+    public function findRegistrationByCardIdOnSameDay($cardId, $date) {
+        $constraints = [];
+        $query = $this->createQuery();
+
+        $constraints[] = $query->equals('phone', $cardId);
+
+        // prepare datetime
+        $dateBegin = clone $date;
+        $dateEnd = clone $date;
+
+        $dateBegin = $dateBegin->setTime(0,0);
+        $dateEnd = $dateEnd->setTime(23,59);
+
+        $constraints[] = $query->greaterThanOrEqual('event.startdate', $dateBegin);
+        $constraints[] = $query->lessThanOrEqual('event.startdate', $dateEnd);
+
+        return $query->matching($query->logicalAnd($constraints))->execute();
+    }
 }

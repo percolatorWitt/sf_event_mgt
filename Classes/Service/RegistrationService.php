@@ -358,6 +358,9 @@ class RegistrationService
         } elseif (!$this->checkLibraryCardId($registration->getPhone())) {
             $success = false;
             $result = RegistrationResult::REGISTRATION_FAILED_BIBID;
+        } elseif ($this->checkSameDayRegistration($registration->getPhone(), $event->getStartdate())) {
+            $success = false;
+            $result = RegistrationResult::REGISTRATION_FAILED_SAMEDAY;
         }
         elseif ($event->getRegistration()->count() >= $event->getMaxParticipants()
             && $event->getMaxParticipants() > 0 && $event->getEnableWaitlist()
@@ -366,6 +369,12 @@ class RegistrationService
         }
 
         return $success;
+    }
+
+    public function checkSameDayRegistration($cardId, $date) {
+        $registrations = $this->registrationRepository->findRegistrationByCardIdOnSameDay($cardId, $date);
+
+        return $registrations->count() >= 1;
     }
 
     /**

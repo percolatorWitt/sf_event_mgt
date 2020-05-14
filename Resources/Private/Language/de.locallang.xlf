@@ -247,6 +247,10 @@
 				<source>Registration failed, the given library card id is not correct.</source>
 				<target>Die Registrierung ist fehlgeschlagen, da die ID des Ausweises nicht korrekt ist.</target>
 			</trans-unit>
+			<trans-unit id="event.message.registrationfailedsamedayregistration">
+				<source>Registration failed, library card id is already registered at the same day to a different event..</source>
+				<target>Registrierung ist fehlgeschlagen, da die ID des Ausweises bereits am selben Tag registriert wurde.</target>
+			</trans-unit>
 			<trans-unit id="event.message.registrationnotpossible">
 				<source>Unable to show registration form - possible reasons: Event expired, deadline or max. participants reached.</source>
 			</trans-unit>
@@ -369,6 +373,7 @@
 			</trans-unit>
 			<trans-unit id="registrationResult.title.failed">
 				<source>Registration failed</source>
+				<target>Registrierung fehlgeschlagen</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.organisator">
 				<source>Organisator</source>

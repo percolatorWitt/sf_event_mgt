@@ -207,6 +207,9 @@
 			<trans-unit id="event.message.registrationfailedbibidincorrect">
 				<source>Registration failed, the given library card id is not correct.</source>
 			</trans-unit>
+			<trans-unit id="event.message.registrationfailedsamedayregistration">
+				<source>Registration failed, library card id is already registered at the same day to a different event..</source>
+			</trans-unit>
 			<trans-unit id="event.message.registrationnotpossible">
 				<source>Unable to show registration form - possible reasons: Event expired, deadline or max. participants reached.</source>
 			</trans-unit>
