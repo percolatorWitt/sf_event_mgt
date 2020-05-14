@@ -262,6 +262,7 @@
 			</trans-unit>
 			<trans-unit id="event.message.confirmation_successful">
 				<source>Your registration has been successfully confirmed.</source>
+				<target>Ihre Registrierung wurde erfolgreich bestätigt.</target>
 			</trans-unit>
 			<trans-unit id="event.message.confirmation_waitlist_successful">
 				<source>Your registration on the waitlist has been successfully confirmed.</source>
@@ -280,6 +281,7 @@
 			</trans-unit>
 			<trans-unit id="event.message.cancel_successful">
 				<source>Your registration has been successfully cancelled.</source>
+				<target>Ihre Registrierung wurde erfolgreich storniert.</target>
 			</trans-unit>
 			<trans-unit id="event.message.cancel_failed_wrong_hmac">
 				<source>Cancellation failed, wrong HMAC.</source>
@@ -343,6 +345,7 @@
 			</trans-unit>
 			<trans-unit id="confirmRegistration.title.successful">
 				<source>Registration confirmed</source>
+				<target>Registrierung bestätigt</target>
 			</trans-unit>
 			<trans-unit id="confirmRegistrationWaitlist.title.successful">
 				<source>Registration on the waitlist confirmed</source>
@@ -352,6 +355,7 @@
 			</trans-unit>
 			<trans-unit id="cancelRegistration.title.successful">
 				<source>Registration cancelled</source>
+				<target>Registrierung storniert</target>
 			</trans-unit>
 			<trans-unit id="cancelRegistration.title.failed">
 				<source>Cancellation failed</source>
