@@ -95,6 +95,8 @@
                     </f:else>
                 </f:if>
 
+                <div class="color-marker" style="background: {event.color};"></div>
+
                 <f:if condition="{event.registrationPossible}">
                     <f:if condition="{settings.registrationPid} !=''">
                         <f:link.action action="registration" arguments="{event : event}" pageUid="{settings.registrationPid}">
