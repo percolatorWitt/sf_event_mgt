@@ -844,9 +844,23 @@ return [
             'l10n_mode' => 'prefixLangTitle',
             'label' => 'LLL:EXT:sf_event_mgt/Resources/Private/Language/locallang_db.xlf:tx_sfeventmgt_domain_model_event.color',
             'config' => [
-                'type' => 'input',
-                'size' => 30,
-                'eval' => 'trim'
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'default' => 0,
+                'items' => [
+                    [
+                        'gelb',
+                        'yellow'
+                    ],
+                    [
+                        'blau',
+                        'blue'
+                    ],
+                    [
+                        'grün',
+                        'green'
+                    ],
+                ],
             ],
         ],
     ],
