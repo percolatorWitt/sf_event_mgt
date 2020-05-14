@@ -177,6 +177,7 @@
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.accepttc">
 				<source>Accept terms and conditions</source>
+				<target>Lesesaal-Medien</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.confirmed">
 				<source>Confirmed</source>
