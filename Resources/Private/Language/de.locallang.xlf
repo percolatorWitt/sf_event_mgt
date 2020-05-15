@@ -386,6 +386,7 @@
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_organisator.phone">
 				<source>Phone number</source>
+				<target>Bibliotheksausweisnummer</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_organisator.image">
 				<source>Image</source>
