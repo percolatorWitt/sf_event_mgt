@@ -80,7 +80,7 @@
 
             <div class="event-registration-row">
                 <div class="event-list-label">
-                    Farbcodierung
+                    <!--Farbcodierung-->
                 </div>
                 <div class="event-list-value event-registrations">
                     <div style="width:20px;height:20px;background: {event.color};"></div>
@@ -110,7 +110,7 @@
                     <div class="clear"></div>
                 </div>
             </f:if>
-
+            <br/>
             <h2><f:translate key="registration.form.header" /></h2>
 
             <f:if condition="{event.enableWaitlist}">
@@ -193,7 +193,7 @@
                     <div class="event-registration-row checkbox {e:validation.errorClass(fieldname: 'accepttc')}">
                         <label for="accepttc">
                             <f:form.checkbox id="accepttc" property="accepttc" value="1"/>
-                            Lesesaal-Medien
+                            Ich möchte Lesesaalmedien nutzen.
                             <f:comment><f:translate key="tx_sfeventmgt_domain_model_registration.accepttc"/></f:comment>
                             <e:registration.isRequiredField settings="{settings}" fieldname="accepttc">
                                 <span class="event-required">*</span>

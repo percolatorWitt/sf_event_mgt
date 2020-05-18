@@ -49,11 +49,11 @@
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.enable_registration">
 				<source>Registration enabled</source>
-				<target>Registrierung aktiv</target>
+				<target>Reservierung aktiv</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.registrations">
 				<source>Registrations</source>
-				<target>Registrierungen</target>
+				<target>Reservierungen</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.freePlaces">
 				<source>Free places</source>
@@ -123,7 +123,7 @@
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration">
 				<source>Registration</source>
-				<target>Registrierung</target>
+				<target>Reservierung</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.firstname">
 				<source>Firstname</source>
@@ -190,7 +190,7 @@
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.amountOfRegistrations">
 				<source>Amount of registrations</source>
-				<target>Anzahl der Registrierungen</target>
+				<target>Anzahl der Reservierungen</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.libraryCard">
 				<source>Library card</source>
@@ -202,7 +202,7 @@
 			</trans-unit>
 			<trans-unit id="registration.form.header">
 				<source>Registration form</source>
-				<target>Registrierungsformular</target>
+				<target>Lesesaalnutzung</target>
 			</trans-unit>
 			<trans-unit id="registration.form.waitlist">
 				<source>Please note, that the event is fully booked and you are registering to the waitlist</source>
@@ -220,7 +220,7 @@
 			</trans-unit>
 			<trans-unit id="event.submit-registration">
 				<source>Send registration</source>
-				<target>Registrierung abschicken</target>
+				<target>Reservierung abschicken</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationfailedeventexpired">
 				<source>Registration is not possible any more, because the event startdate is reached.</source>
@@ -245,18 +245,18 @@
 			</trans-unit>
 			<trans-unit id="event.message.registrationfailedbibidincorrect">
 				<source>Registration failed, the given library card id is not correct.</source>
-				<target>Die Registrierung ist fehlgeschlagen, da die ID des Ausweises nicht korrekt ist.</target>
+				<target>Die Reservierung ist nicht möglich, da die Bibliotheksausweisnummer nicht korrekt ist.</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationfailedsamedayregistration">
 				<source>Registration failed, library card id is already registered at the same day to a different event..</source>
-				<target>Registrierung ist fehlgeschlagen, da die ID des Ausweises bereits am selben Tag registriert wurde.</target>
+				<target>Reservierung ist fehlgeschlagen, da die ID des Ausweises bereits am selben Tag registriert wurde.</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationnotpossible">
 				<source>Unable to show registration form - possible reasons: Event expired, deadline or max. participants reached.</source>
 			</trans-unit>
 			<trans-unit id="event.message.registrationsuccessful">
 				<source>Your registration was successful.</source>
-				<target>Die Registrierung war erfolgreich</target>
+				<target>Sie erhalten eine E-Mail mit einem Bestätigungslink.</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationsuccessfulwrongeventhmac">
 				<source>Your registration was successful, but the given event or HMAC is wrong!</source>
@@ -266,7 +266,7 @@
 			</trans-unit>
 			<trans-unit id="event.message.confirmation_successful">
 				<source>Your registration has been successfully confirmed.</source>
-				<target>Ihre Registrierung wurde erfolgreich bestätigt.</target>
+				<target>Sie erhalten eine E-Mail mit der Reservierungsbestätigung. Bitte bringen Sie diese ausgedruckt zu Ihrem Termin mit.</target>
 			</trans-unit>
 			<trans-unit id="event.message.confirmation_waitlist_successful">
 				<source>Your registration on the waitlist has been successfully confirmed.</source>
@@ -285,7 +285,7 @@
 			</trans-unit>
 			<trans-unit id="event.message.cancel_successful">
 				<source>Your registration has been successfully cancelled.</source>
-				<target>Ihre Registrierung wurde erfolgreich storniert.</target>
+				<target>Ihre Reservierung wurde erfolgreich storniert.</target>
 			</trans-unit>
 			<trans-unit id="event.message.cancel_failed_wrong_hmac">
 				<source>Cancellation failed, wrong HMAC.</source>
@@ -349,7 +349,7 @@
 			</trans-unit>
 			<trans-unit id="confirmRegistration.title.successful">
 				<source>Registration confirmed</source>
-				<target>Registrierung bestätigt</target>
+				<target>Ihre Reservierung ist bestätigt.</target>
 			</trans-unit>
 			<trans-unit id="confirmRegistrationWaitlist.title.successful">
 				<source>Registration on the waitlist confirmed</source>
@@ -359,21 +359,21 @@
 			</trans-unit>
 			<trans-unit id="cancelRegistration.title.successful">
 				<source>Registration cancelled</source>
-				<target>Registrierung storniert</target>
+				<target>Reservierung storniert</target>
 			</trans-unit>
 			<trans-unit id="cancelRegistration.title.failed">
 				<source>Cancellation failed</source>
 			</trans-unit>
 			<trans-unit id="registrationResult.title.successful">
 				<source>Registration successful</source>
-				<target>Registrierung erfolgreich abgeschlossen</target>
+				<target>Ihre Reservierung ist erfolgt.</target>
 			</trans-unit>
 			<trans-unit id="registrationWaitlistResult.title.successful">
 				<source>Registration on the waitlist successful</source>
 			</trans-unit>
 			<trans-unit id="registrationResult.title.failed">
 				<source>Registration failed</source>
-				<target>Registrierung fehlgeschlagen</target>
+				<target>Ihre Reservierung ist fehlgeschlagen.</target>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_event.organisator">
 				<source>Organisator</source>
