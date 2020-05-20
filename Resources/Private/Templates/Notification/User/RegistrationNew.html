@@ -2,7 +2,9 @@
 
 <p>Guten Tag {registration.firstname} {registration.lastname},</p>
 <p>wir haben Ihre Reservierung für die Lesesaalnutzung für folgendes Zeitfenster erhalten:</p>
-<p>({f:format.date(date: event.startdate, format: '%d.%m.%Y - %H:%M')}  - {f:format.date(date: event.enddate, format: '%H:%M')})</p>
+<p style="font-size:1.1em;">
+    <strong>{f:format.date(date: event.startdate, format: '%d.%m.%Y - %H:%M')}  - {f:format.date(date: event.enddate, format: '%H:%M')} Uhr</strong>
+</p>
 <p>
     <div style="width:20px;height:20px;background-color:{event.color};border:1px solid #000000;">&nbsp;</div>
     Ihr Zeitfenster ist '<f:if condition="{event.color}=='yellow'"><f:then>gelb</f:then></f:if>
@@ -29,7 +31,7 @@ Ihr Lesesaalteam</p>
 <p>Lesesäle<br>
 Staats- und Universitätsbibliothek Hamburg Carl von Ossietzky<br>
 Von-Melle-Park 3, 20146 Hamburg<br>
-Tel 040-42838-2261|Mail: lesesaal@sub.uni-hamburg.de<br>
+Tel 040-42838-2261|E-Mail: lesesaal@sub.uni-hamburg.de<br>
 <a href="https:www.sub.uni-hamburg.de">Stabi.Hamburg</a><br>
 <a href="https://www.sub.uni-hamburg.de/datenschutzerklaerung.html">Datenschutzerklärung</a></p>
 </html>
