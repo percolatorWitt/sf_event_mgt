@@ -148,7 +148,7 @@
 				<source>Phone</source>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.email">
-				<source>Email</source>
+				<source>E-Mail</source>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.ignoreNotifications">
 				<source>No e-mail notifications</source>
