@@ -11,14 +11,14 @@
     <f:if condition="{event.color}=='blue'"><f:then>blau</f:then></f:if>
     <f:if condition="{event.color}=='green'"><f:then>grün</f:then></f:if>'
 </p>
-<p>Bitte bestätigen Sie Ihre Registrierung durch das Aufrufen des folgenden Links:</p>
+<p>Bitte bestätigen Sie Ihre Reservierung durch das Aufrufen des folgenden Links:</p>
 <p>
     <f:uri.action action="confirmRegistration" arguments="{reguid: '{registration.uid}', hmac: '{hmac}'}" absolute="TRUE" controller="Event" extensionName="sfeventmgt" pluginName="Pievent" />
 </p>
-<p>Ihre Registrierung wird automatisch storniert, wenn Sie die Registrierung nicht <strong>bis <span style="font-size:1.1em;">{f:format.date(date: registration.confirmationUntil, format: '%d.%m.%Y - %H:%M:%S')} Uhr</span> bestätigt</strong> haben.</p>
+<p>Ihre Reservierung wird automatisch storniert, wenn Sie die Reservierung nicht <strong>bis <span style="font-size:1.1em;">{f:format.date(date: registration.confirmationUntil, format: '%d.%m.%Y - %H:%M:%S')} Uhr</span> bestätigt</strong> haben.</p>
 
 <f:if condition="{event.enableCancel}">
-    <p>Falls Sie Ihre Registrierung stornieren möchten, können Sie folgenden Link aufrufen:</p>
+    <p>Falls Sie Ihre Reservierung stornieren möchten, können Sie folgenden Link aufrufen:</p>
     <p>
         <f:uri.action action="cancelRegistration" arguments="{reguid: '{registration.uid}', hmac: '{hmac}'}" absolute="TRUE" controller="Event" extensionName="sfeventmgt" pluginName="Pievent" />
     </p>
