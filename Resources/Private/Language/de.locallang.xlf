@@ -236,12 +236,14 @@
 			</trans-unit>
 			<trans-unit id="event.message.registrationfailednotenoughfreeplaces">
 				<source>Registration failed, because the amount of given registrations exceeds the amount of remaining registrations.</source>
+                <target>Die Reservierung ist fehlgeschlagen, da sie die Zahl der maximalen Reserverierungen erreicht wurde.</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationfailedmaxamountregistrationsexceeded">
 				<source>Registration failed, because the amount of given registrations exceeds the max amount of simultaneous registrations.</source>
 			</trans-unit>
 			<trans-unit id="event.message.registrationfailedemailnotunique">
 				<source>Registration failed, the e-mail address is already registered to the event.</source>
+                <target>Sie können pro Tag nur einen Termin reservieren.</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationfailedbibidincorrect">
 				<source>Registration failed, the given library card id is not correct.</source>
@@ -279,6 +281,7 @@
 			</trans-unit>
 			<trans-unit id="event.message.confirmation_failed_confirmation_until_expired">
 				<source>Confirmation failed, confirmation date has expired.</source>
+                <target>Ihre Reservierung ist fehlgeschlagen, der Bestätigungslink ist abgelaufen.</target>
 			</trans-unit>
 			<trans-unit id="event.message.confirmation_failed_already_confirmed">
 				<source>Confirmation failed, because the registration already has been confirmed.</source>

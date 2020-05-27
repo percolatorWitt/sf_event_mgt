@@ -14,7 +14,7 @@
 </p>
 
 <f:if condition="{event.cancellationPossible}">
-    <p>Wenn Sie die Teilnahme zum Event stornieren möchte, rufen Sie bitte den folgenden Link auf:</p>
+    <p>Wenn Sie Ihren Termin stornieren möchten, rufen Sie bitte den folgenden Link auf:</p>
     <p>
         <f:uri.action action="cancelRegistration" arguments="{reguid: '{registration.uid}', hmac: '{hmac}'}" absolute="TRUE" controller="Event" extensionName="sfeventmgt" pluginName="Pievent" />
     </p>
