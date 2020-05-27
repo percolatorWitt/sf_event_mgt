@@ -257,7 +257,7 @@
 				<source>Unable to show registration form - possible reasons: Event expired, deadline or max. participants reached.</source>
 			</trans-unit>
 			<trans-unit id="event.message.registrationsuccessful">
-				<source>Your registration was successful.</source>
+				<source>Sie erhalten eine E-Mail mit einem Bestaetigungslink.</source>
 				<target>Sie erhalten eine E-Mail mit einem Bestätigungslink.</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationsuccessfulwrongeventhmac">
@@ -368,7 +368,7 @@
 				<source>Cancellation failed</source>
 			</trans-unit>
 			<trans-unit id="registrationResult.title.successful">
-				<source>Registration successful</source>
+				<source>Ihre Anmeldung war erfolgreich.</source>
 				<target>Ihre Reservierung ist erfolgt.</target>
 			</trans-unit>
 			<trans-unit id="registrationWaitlistResult.title.successful">

@@ -214,7 +214,7 @@
 				<source>Unable to show registration form - possible reasons: Event expired, deadline or max. participants reached.</source>
 			</trans-unit>
 			<trans-unit id="event.message.registrationsuccessful">
-				<source>Your registration was successful.</source>
+				<source>Sie erhalten eine E-Mail mit einem Bestaetigungslink.</source>
 			</trans-unit>
 			<trans-unit id="event.message.registrationsuccessfulwrongeventhmac">
 				<source>Your registration was successful, but the given event or HMAC is wrong!</source>
@@ -319,7 +319,7 @@
 				<source>Cancellation failed</source>
 			</trans-unit>
 			<trans-unit id="registrationResult.title.successful">
-				<source>Registration successful</source>
+				<source>Ihre Anmeldung war erfolgreich.</source>
 			</trans-unit>
 			<trans-unit id="registrationWaitlistResult.title.successful">
 				<source>Registration on the waitlist successful</source>
