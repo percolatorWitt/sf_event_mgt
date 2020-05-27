@@ -163,7 +163,7 @@
 				<source>Library card</source>
 			</trans-unit>
 			<trans-unit id="tx_sfeventmgt.event.registration">
-				<source>Registration</source>
+				<source>Anmelden</source>
 			</trans-unit>
 			<trans-unit id="registration.form.header">
 				<source>Registration form</source>
