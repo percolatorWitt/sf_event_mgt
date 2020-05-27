@@ -196,9 +196,9 @@
 				<source>Library card</source>
 				<target>Bibliotheksausweisnummer</target>
 			</trans-unit>
-			<trans-unit id="event.registration">
+			<trans-unit id="tx_sfeventmgt.event.registration">
 				<source>Registration</source>
-				<target>Check-in</target>
+				<target>Anmelden</target>
 			</trans-unit>
 			<trans-unit id="registration.form.header">
 				<source>Registration form</source>

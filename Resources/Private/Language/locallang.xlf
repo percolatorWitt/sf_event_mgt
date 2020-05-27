@@ -162,7 +162,7 @@
 			<trans-unit id="tx_sfeventmgt_domain_model_registration.libraryCard">
 				<source>Library card</source>
 			</trans-unit>
-			<trans-unit id="event.registration">
+			<trans-unit id="tx_sfeventmgt.event.registration">
 				<source>Registration</source>
 			</trans-unit>
 			<trans-unit id="registration.form.header">
