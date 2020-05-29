@@ -312,7 +312,7 @@
 			</trans-unit>
 			<trans-unit id="event.message.cancel_failed_deadline_expired">
 				<source>Cancellation failed, cancellation date has expired.</source>
-                <traget>Stornierung fehlgeschlagen, das Stornierungsdatum ist abgelaufen.</target>
+                <target>Stornierung fehlgeschlagen, das Stornierungsdatum ist abgelaufen.</target>
 			</trans-unit>
 			<trans-unit id="event.message.cancel_failed_event_started">
 				<source>Cancellation failed, because the event startdate passed.</source>
