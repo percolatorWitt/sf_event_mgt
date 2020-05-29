@@ -372,6 +372,7 @@
 			</trans-unit>
 			<trans-unit id="confirmRegistration.title.failed">
 				<source>Registration confirmation failed</source>
+                <target>Reservierung bestätigen ist fehlgeschlagen</target>
 			</trans-unit>
 			<trans-unit id="cancelRegistration.title.successful">
 				<source>Registration cancelled</source>
