@@ -16,7 +16,7 @@
 <f:if condition="{event.cancellationPossible}">
     <p>Wenn Sie Ihren Termin stornieren möchten, rufen Sie bitte den folgenden Link auf:</p>
     <p>
-        <f:uri.action action="cancelRegistration" arguments="{reguid: '{registration.uid}', hmac: '{hmac}'}" absolute="TRUE" controller="Event" extensionName="sfeventmgt" pluginName="Pievent" />
+        <f:uri.action action="cancelRegistration" arguments="{reguid: '{registration.uid}', hmac: '{hmac}'}" absolute="TRUE" controller="Event" extensionName="sfeventmgt" pluginName="Pievent">Stornierung</f:uri.action>
     </p>
 </f:if>
 <p>Der Zutritt zum Lesesaal erfolgt nur unter <b>Vorlage</b> des Bibliotheksausweises und der <b>Reservierungsbestätigung</b>, vorzugsweise ausgedruckt. Bei Bestellung lesesaalpflichtiger Medien: Bitte bestellen Sie Ihre Medien <b>bis spätestens 3 Tage vor dem Reservierungstermin über den</b> <a href="https://katalogplus.sub.uni-hamburg.de/vufind/" target="_blank">Katalog<b><i>plus</i></b></a>. Die Frist zur Einsichtnahme Ihrer bestellten Medien beträgt 14 Tage.</p>
