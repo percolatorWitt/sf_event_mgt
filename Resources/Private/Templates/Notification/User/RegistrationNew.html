@@ -15,7 +15,7 @@
 <p>
     <f:link.action action="confirmRegistration" arguments="{reguid: '{registration.uid}', hmac: '{hmac}'}" absolute="TRUE" controller="Event" extensionName="sfeventmgt" pluginName="Pievent">zur Reservierungsbestätigung</f:link.action>
 </p>
-<p>Ihre Reservierung wird automatisch storniert, wenn Sie die Reservierung nicht <strong>bis <span style="font-size:1.1em;">{f:format.date(date: registration.confirmationUntil, format: '%d.%m.%Y - %H:%M:%S')} Uhr</span> bestätigt</strong> haben.</p>
+<p>Ihre Reservierung wird automatisch storniert, wenn Sie die Reservierung nicht <strong>bis <span style="font-size:1.1em;">{f:format.date(date: registration.confirmationUntil, format: '%d.%m.%Y - %H:%M:%S')} Uhr</span> bestätigt</strong> haben.<br/>Hinweis: Ist Ihre Reservierungsfrist verstrichen und Sie möchten trotzdem reservieren, stornieren Sie diese Buchung (Link unten) und buchen Sie bitte erneut. </p>
 
 <f:if condition="{event.enableCancel}">
     <p>Falls Sie Ihre Reservierung stornieren möchten, können Sie folgenden Link aufrufen:</p>

@@ -252,7 +252,7 @@
 			</trans-unit>
 			<trans-unit id="event.message.registrationfailedemailnotunique">
 				<source>Registration failed, the e-mail address is already registered to the event.</source>
-                <target>Sie können pro Tag nur einen Termin reservieren.</target>
+                <target>Die Reservierung ist fehlgeschlagen, da Sie diesen Termin bereits reserviert haben.</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationfailedbibidincorrect">
 				<source>Registration failed, the given library card id is not correct.</source>
@@ -267,7 +267,7 @@
 			</trans-unit>
 			<trans-unit id="event.message.registrationsuccessful">
 				<source>Sie erhalten eine E-Mail mit einem Bestaetigungslink.</source>
-				<target>Sie erhalten eine E-Mail mit einem Bestätigungslink.</target>
+				<target>Sie erhalten eine E-Mail mit einem Bestätigungslink. <br/>Ohne Bestätigung wird Ihre Reservierung nicht aktiv und der Platz weitervergeben. Bitte schauen Sie ggf. auch in Ihren Spamordner.</target>
 			</trans-unit>
 			<trans-unit id="event.message.registrationsuccessfulwrongeventhmac">
 				<source>Your registration was successful, but the given event or HMAC is wrong!</source>
